@@ -4,8 +4,8 @@
         <!-- Primary Navigation Menu -->
         <div class="py-4 max-w-7xl">
             <div class="flex-shrink-0 flex items-center">
-                <a href="{{ route('welcome') }}">
-                    <x-application-logo class="block h-10 w-auto fill-current text-gray-600 hover:text-gray-300 transition-colors" />
+                <a href="{{ route('welcome') }}" class="{{ (route('welcome') == request()->url()) ? 'text-orange-500' : 'text-gray-600' }} hover:text-gray-300 transition-colors">
+                    <x-application-logo class="block h-10 w-auto fill-current" />
                 </a>
             </div>
         </div>
