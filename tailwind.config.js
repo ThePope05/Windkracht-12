@@ -15,6 +15,14 @@ export default {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            'aqua': '#62929E',
+            'dark-aqua': '#4A6D7C',
+            'diara': '#CC7753',
+            'dark-grey': '#414747',
+            'light': '#E6ECEC',
+            'light-aqua': '#D1DFE2',
+        },
     },
 
     plugins: [forms],

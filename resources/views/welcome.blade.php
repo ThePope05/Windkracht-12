@@ -1,9 +1,15 @@
 <x-app-layout>
-    <video id="video-background" autoplay muted loop>
+    <video id="video-background" autoplay muted loop class="z-0 absolute">
         <source src="{{ asset('/vids/Beach_L-to-R.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
-
     </video>
+    <div class="z-10 text-light-aqua relative">
+        <p>
+            Windkracht-XII
+        </p>
+        <hr>
+        <p>"sneller dan de wind"</p>
+    </div>
 
     <script>
         const videoSources = [
