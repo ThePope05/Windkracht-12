@@ -13,6 +13,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                anton: ["Anton", 'sans-serif'],
+                robotoMono: ["Roboto Mono", "monospace"],
             },
         },
         colors: {

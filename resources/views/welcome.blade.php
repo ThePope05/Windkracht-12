@@ -3,12 +3,10 @@
         <source src="{{ asset('/vids/Beach_L-to-R.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <div class="z-10 text-light-aqua relative">
-        <p>
-            Windkracht-XII
-        </p>
-        <hr>
-        <p>"sneller dan de wind"</p>
+    <div class="z-10 text-light-aqua absolute top-[30%] right-[15%] font-anton">
+        <p class="text-9xl pr-20">Windkracht-XII</p>
+        <hr class="border-4 mb-2 rounded">
+        <p class="text-4xl text-right">"sneller dan de wind"</p>
     </div>
 
     <script>
