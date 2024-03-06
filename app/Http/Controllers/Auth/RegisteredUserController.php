@@ -12,8 +12,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Mail\ActivateAccount;
 
 class RegisteredUserController extends Controller
 {
@@ -30,20 +32,25 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required|string|max:255|unique:users|unique:invites',
+            'email' => 'required|string|email|max:255|unique:users|unique:invites',
         ]);
 
-        $user = Invite::create([
+
+        $invite = Invite::create([
             'name' => $request->name,
             'email' => $request->email,
             'token' => bin2hex(random_bytes(16)),
         ]);
 
-        return redirect('welcome');
+        //Mail::to($invite->email)->send(new ActivateAccount($invite->email));
+
+        return view('auth.activate', [
+            'invite' => $invite,
+        ]);
     }
 
     public function activate(Request $request): view
