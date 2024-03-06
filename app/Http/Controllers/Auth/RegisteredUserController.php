@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Invite;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -31,21 +33,46 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
         ]);
 
-        $user = User::create([
+        $user = Invite::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'token' => bin2hex(random_bytes(16)),
         ]);
 
-        event(new Registered($user));
+        return redirect('welcome');
+    }
 
-        Auth::login($user);
+    public function activate(Request $request): view
+    {
+        $invite = Invite::where('token', $request->token)->first();
 
-        return redirect(RouteServiceProvider::HOME);
+        return view('auth.activate', [
+            'invite' => $invite,
+        ]);
+    }
+
+    public function activateAccount(Request $request)
+    {
+        $invite = Invite::where('email', $request->email)->first();
+
+        if ($invite) {
+            $user = User::create([
+                'name' => $invite->name,
+                'email' => $invite->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $invite->claimed = true;
+
+            Auth::login($user);
+
+            return redirect(RouteServiceProvider::HOME);
+        }
+
+        return redirect()->back();
     }
 }
