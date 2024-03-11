@@ -46,6 +46,18 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="{{ route('auth.login') }}">Already have an account? Login</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="{{ route('auth.resend') }}">Didn't get the mail? Resend</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
