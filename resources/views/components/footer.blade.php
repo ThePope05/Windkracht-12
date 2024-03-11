@@ -3,8 +3,8 @@
         <div>
             <h3 class="font-bold text-5xl">Contact Info</h3>
             <ul>
-                <img src="" alt="">
-                <img src="" alt="">
+            <span class="material-symbols-outlined">mail</span>
+                <span class="material-symbols-outlined">call</span>
             </ul>
         </div>
         <div>
