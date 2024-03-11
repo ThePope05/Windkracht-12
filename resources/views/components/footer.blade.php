@@ -2,9 +2,9 @@
     <div class="flex place-content-center space-x-20 text-white bg-slate-600">
         <div>
             <h3 class="font-bold text-5xl">Contact Info</h3>
-            <ul>
-            <span class="material-symbols-outlined">mail</span>
-                <span class="material-symbols-outlined">call</span>
+            <ul class="flex justify-between w-60">
+                <span class="material-symbols-outlined text-8xl mt-6">mail</span>
+                <span class="material-symbols-outlined text-8xl mt-6">call</span>
             </ul>
         </div>
         <div>
