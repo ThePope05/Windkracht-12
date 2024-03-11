@@ -9,7 +9,7 @@
         </div>
         <div>
             <h3 class="font-bold text-5xl">Openingstijden</h3>
-            <ul class="place-self-center">
+            <ul class="text-center mt-2">
                 <li>Maandag: 9:00-20:00</li>
                 <li>Dinsdag: 8:00-20:00</li>
                 <li>Woensdag: 9:00-20:00</li>
