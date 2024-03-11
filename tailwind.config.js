@@ -22,6 +22,7 @@ export default {
             'dark-aqua': '#4A6D7C',
             'diara': '#CC7753',
             'dark-grey': '#414747',
+            'grey': '#4E5555',
             'light': '#E6ECEC',
             'light-aqua': '#D1DFE2',
         },
