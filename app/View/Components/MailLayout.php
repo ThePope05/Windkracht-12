@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class mail extends Component
+class MailLayout extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class mail extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.mail');
+        return view('layouts.mail');
     }
 }
