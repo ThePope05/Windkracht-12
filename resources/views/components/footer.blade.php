@@ -3,8 +3,8 @@
         <div>
             <h3 class="font-bold text-5xl">Contact Info</h3>
             <ul class="flex justify-between w-60">
-                <span class="material-symbols-outlined text-8xl mt-6">mail</span>
-                <span class="material-symbols-outlined text-8xl mt-6">call</span>
+                <a href=""><span class="material-symbols-outlined text-8xl mt-6 ml-4">mail</span></a>
+                <a href=""><span class="material-symbols-outlined text-8xl mt-6 ml-10">call</span></a>
             </ul>
         </div>
         <div>
@@ -21,10 +21,10 @@
         </div>
         <div>
             <h3 class="font-bold text-5xl">Volg ons</h3>
-            <ul class="flex">
-                <img class="w-25 h-20" src="footer-images/twitter.png" alt="">
-                <img class="w-25 h-20" src="footer-images/facebook.png" alt="">
-                <img class="w-25 h-20" src="footer-images/instagram.png" alt="">
+            <ul class="flex w-48 flex-wrap">
+                <a href=""><img class="w-25 h-20 mr-4 ml-4" src="footer-images/twitter.png" alt=""></a>
+                <a href=""><img class="w-25 h-20" src="footer-images/facebook.png" alt=""></a>
+                <a href=""><img class="w-25 h-20 ml-16" src="footer-images/instagram.png" alt=""></a>
             </ul>
         </div>
         
