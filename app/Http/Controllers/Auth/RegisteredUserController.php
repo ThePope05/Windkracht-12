@@ -44,13 +44,26 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'token' => bin2hex(random_bytes(16)),
+            'last_sent_at' => now(),
         ]);
 
-        //Mail::to($invite->email)->send(new ActivateAccount($invite->email));
+        Mail::to($invite->email)->send(new ActivateAccount($invite->email));
 
-        return view('auth.activate', [
+        return view('welcome', [
             'invite' => $invite,
         ]);
+    }
+
+    public function resend(Request $request): RedirectResponse
+    {
+        $invite = Invite::where('email', $request->email)->first();
+
+        if ($invite && $invite->claimed === false && $invite->last_sent_at < now()->subMinutes(5)) {
+            Mail::to($invite->email)->send(new ActivateAccount($invite->email));
+            $invite->last_sent_at = now();
+        }
+
+        return redirect()->back();
     }
 
     public function activate(Request $request): view
