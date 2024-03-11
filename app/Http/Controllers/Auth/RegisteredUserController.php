@@ -85,8 +85,10 @@ class RegisteredUserController extends Controller
                 'email' => $invite->email,
                 'password' => Hash::make($request->password),
             ]);
+            $user->markEmailAsVerified();
 
             $invite->claimed = true;
+            $invite->save();
 
             Auth::login($user);
 
