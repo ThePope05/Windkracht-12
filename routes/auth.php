@@ -25,6 +25,9 @@ Route::middleware('guest')
 
         Route::post('activate', [RegisteredUserController::class, 'activateAccount']);
 
+        Route::get('resend', [RegisteredUserController::class, 'resend'])
+            ->name('resend');
+
         Route::get('login', [AuthenticatedSessionController::class, 'create'])
             ->name('login');
 
