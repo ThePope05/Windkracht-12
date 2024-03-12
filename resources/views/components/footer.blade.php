@@ -1,5 +1,5 @@
-<footer>
-    <div class="flex place-content-center space-x-20 text-white bg-dark-grey">
+<footer class="bottom-0 absolute w-full h-0">
+    <div class="flex place-content-center space-x-20 text-white bg-dark-grey text-light">
         <div>
             <h3 class="font-bold text-5xl">Contact Info</h3>
             <ul class="flex justify-between w-60">
@@ -29,9 +29,9 @@
         </div>
         
     </div>
-    <div class="flex w-100vh justify-between bg-grey">
+    <div class="flex w-100vh justify-between bg-grey text-light">
         <div class="flex gap-2 items-center">
-            <img class="w-10 h-10" src="footer-images/copyright.png" alt="">
+            <img class="w-10 h-10 bg-light rounded-full" src="footer-images/copyright.png" alt="">
             <h1 class="place-content-center font-black">Copyright 2024: Designed by Kiteschool</h1>
         </div>
         <img class="w-20 h-15" src="footer-images/logo.png" alt="">
