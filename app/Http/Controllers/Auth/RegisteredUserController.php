@@ -4,18 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Invite;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-use App\Mail\ActivateAccount;
 
 class RegisteredUserController extends Controller
 {
@@ -32,67 +28,24 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:users|unique:invites',
-            'email' => 'required|string|email|max:255|unique:users|unique:invites',
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-
-        $invite = Invite::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'token' => bin2hex(random_bytes(16)),
-            'last_sent_at' => now(),
+            'password' => Hash::make($request->password),
         ]);
 
-        Mail::to($invite->email)->send(new ActivateAccount($invite->email));
+        event(new Registered($user));
 
-        return view('welcome', [
-            'invite' => $invite,
-        ]);
-    }
+        Auth::login($user);
 
-    public function resend(Request $request): RedirectResponse
-    {
-        $invite = Invite::where('email', $request->email)->first();
-
-        if ($invite && $invite->claimed === false && $invite->last_sent_at < now()->subMinutes(5)) {
-            Mail::to($invite->email)->send(new ActivateAccount($invite->email));
-            $invite->last_sent_at = now();
-        }
-
-        return redirect()->back();
-    }
-
-    public function activate(Request $request): view
-    {
-        $invite = Invite::where('token', $request->token)->first();
-
-        return view('auth.activate', [
-            'invite' => $invite,
-        ]);
-    }
-
-    public function activateAccount(Request $request)
-    {
-        $invite = Invite::where('email', $request->email)->first();
-
-        if ($invite) {
-            $user = User::create([
-                'name' => $invite->name,
-                'email' => $invite->email,
-                'password' => Hash::make($request->password),
-            ]);
-
-            $invite->claimed = true;
-
-            Auth::login($user);
-
-            return redirect(RouteServiceProvider::HOME);
-        }
-
-        return redirect()->back();
+        return redirect(RouteServiceProvider::HOME);
     }
 }
