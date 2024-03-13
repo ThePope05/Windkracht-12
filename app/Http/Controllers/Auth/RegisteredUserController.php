@@ -39,10 +39,12 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users|unique:invites',
         ]);
 
+        $role = (isset($request->role)) ? $request->role : 'user';
 
         $invite = Invite::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role' => $role,
             'token' => bin2hex(random_bytes(16)),
             'last_sent_at' => now(),
         ]);
@@ -80,9 +82,13 @@ class RegisteredUserController extends Controller
         $invite = Invite::where('email', $request->email)->first();
 
         if ($invite) {
+
+            $role = ($invite->role != 'user') ? 'user' : $invite->role;
+
             $user = User::create([
                 'name' => $invite->name,
                 'email' => $invite->email,
+                'role' => $role,
                 'password' => Hash::make($request->password),
             ]);
 

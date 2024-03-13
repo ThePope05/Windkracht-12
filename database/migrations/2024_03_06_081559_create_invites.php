@@ -16,6 +16,7 @@ return new class extends Migration
             $table->boolean('claimed')->default(false);
             $table->string('name')->unique();
             $table->string('email')->unique();
+            $table->string('role')->default('user');
             $table->string('token')->unique();
             $table->timestamp('last_sent_at')->nullable();
             $table->timestamps();
