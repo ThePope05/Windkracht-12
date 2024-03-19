@@ -26,6 +26,15 @@ export default {
             'light': '#E6ECEC',
             'light-aqua': '#D1DFE2',
         },
+        screens: {
+            'xs': '375px',
+
+            'sm': '640px',
+
+            'md': '768px',
+      
+            'lg': '1024px',
+          },
     },
 
     plugins: [forms],
