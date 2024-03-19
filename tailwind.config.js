@@ -27,7 +27,7 @@ export default {
             'light-aqua': '#D1DFE2',
         },
         screens: {
-            'xs': '375px',
+            'xs': '314px',
 
             'sm': '640px',
 
