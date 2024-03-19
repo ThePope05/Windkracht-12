@@ -1,8 +1,8 @@
 <footer class="bottom-0 absolute w-full h-0">
-    <div class="flex place-content-center lg:space-x-20 md:space-x-8 bg-dark-grey text-light">
+    <div class="lg:flex md:flex sm:flex place-content-center lg:space-x-20 md:space-x-8 bg-dark-grey text-light xs:block">
         <div>
             <h3 class="font-bold lg:text-5xl md:text-4xl sm:text-2xl text-center">Contact Info</h3>
-            <ul class="flex lg:justify-between w-60 sm:justify-evenly">
+            <ul class="lg:flex md:flex sm:flex lg:w-60 md:w-60 sm:w-60 lg:justify-between sm:justify-evenly xs:justify-center xs:w-full xs:text-center">
                 <a href=""><span class="material-symbols-outlined text-8xl mt-6 ml-4">mail</span></a>
                 <a href=""><span class="material-symbols-outlined text-8xl mt-6 ml-10 sm:ml-0">call</span></a>
             </ul>
@@ -21,10 +21,10 @@
         </div>
         <div>
             <h3 class="font-bold lg:text-5xl md:text-4xl sm:text-2xl text-center">Volg ons</h3>
-            <ul class="flex w-48 flex-wrap">
+            <ul class="lg:flex md:flex sm:flex lg:w-48 md:w-48 sm:w-48 lg:flex-wrap md:flex-warp sm:flex-wrap xs: flex w-full justify-center">
                 <a href=""><img class="w-25 h-20 mr-4 ml-4" src="footer-images/twitter.png" alt=""></a>
                 <a href=""><img class="w-25 h-20" src="footer-images/facebook.png" alt=""></a>
-                <a href=""><img class="w-25 h-20 ml-16" src="footer-images/instagram.png" alt=""></a>
+                <a href=""><img class="w-25 h-20 ml-16 xs:ml-5" src="footer-images/instagram.png" alt=""></a>
             </ul>
         </div>
         
