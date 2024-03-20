@@ -24,6 +24,8 @@ export default {
             'dark-grey': '#414747',
             'light': '#E6ECEC',
             'light-aqua': '#D1DFE2',
+            'black': '#000000',
+            'white': '#FFFFFF',
         },
     },
 
