@@ -4,7 +4,7 @@
         <!-- Primary Navigation Menu -->
         <div class="py-4 max-w-7xl">
             <div class="flex-shrink-0 flex items-center">
-                <a href="{{ route('welcome') }}" class="hover:text-light text-light-aqua transition-colors font-anton text-3xl">
+                <a href="{{ route('welcome') }}" class="hover:text-light text-light-aqua transition-colors font-anton text-4xl">
                     Windkracht-XII
                 </a>
             </div>
