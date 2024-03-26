@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class PackageController extends Controller
 {
@@ -25,13 +26,21 @@ class PackageController extends Controller
             $packageCard = '';
 
             foreach ($result as $package) {
-                $packageCard .= "<x-package-card route='dashboard'>
-                                    <x-slot name='title'>$package->name</x-slot>
-                                    <li>$package->price</li>
-                                    <li>$package->personCount</li>
-                                    <li>$package->dayPart</li>
-                                    <x-slot name='button'>View Details</x-slot>
-                                </x-package-card>";
+                $xpackagecard = View::make(
+                    'components.package-card',
+                    [
+                        'title' => $package->name,
+                        'attributes' => [
+                            'route' => 'dashboard',
+                        ],
+                        'slot' => "<li>$package->price</li>
+                            <li>$package->personCount</li>
+                            <li>$package->dayPart</li>",
+                        'button' => 'View Details',
+                    ]
+                )->render();
+
+                $packageCard .= $xpackagecard;
             }
         }
 
@@ -39,6 +48,7 @@ class PackageController extends Controller
         $data = [
             'packageCard' => $packageCard,
         ];
+
         return view('welcome', $data);
     }
 }
