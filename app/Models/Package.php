@@ -23,4 +23,16 @@ class Package extends Model
 
     public $timestamps = true;
 
+    public function getPackages()
+    {
+        return $this->select(
+            'id',
+            'name',
+            'price',
+            'personCount',
+            'dayPart',
+        )
+            ->from('package')
+            ->get();
+    }
 }
