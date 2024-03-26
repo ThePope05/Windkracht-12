@@ -18,46 +18,7 @@
         <div class="container mx-auto w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
                 <!-- First Black Div -->
-                <x-package-card route="dashboard">
-                    <x-slot name="title">Package 1</x-slot>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <x-slot name="button">
-                        View Details
-                    </x-slot>
-
-                </x-package-card>
-                <!-- Second Black Div -->
-                <x-package-card route="dashboard">
-                    <x-slot name="title">Package 2</x-slot>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <x-slot name="button">
-                        View Details
-                    </x-slot>
-                </x-package-card>
-                <!-- Third Black Div -->
-                <x-package-card route="dashboard">
-                    <x-slot name="title">Package 3</x-slot>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <x-slot name="button">
-                        View Details
-                    </x-slot>
-                </x-package-card>
-                <!-- Fourth Black Div -->
-                <x-package-card route="dashboard">
-                    <x-slot name="title">Package 4</x-slot>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <x-slot name="button">
-                        View Details
-                    </x-slot>
-                </x-package-card>
+                {!! $packageCard !!}
             </div>
         </div>
     </section>
