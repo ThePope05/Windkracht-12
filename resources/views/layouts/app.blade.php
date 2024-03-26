@@ -15,6 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        <div class="hidden bg-dark-aqua fixed"></div>
+        <div class="hidden bg-dark-aqua absolute"></div>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
@@ -33,4 +35,6 @@
             </main>
         </div>
     </body>
+
+    <script src="/navbar.js"></script>
 </html>
