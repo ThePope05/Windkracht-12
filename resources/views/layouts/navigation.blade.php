@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class=" bg-transparent fixed z-20 w-full">
+<nav x-data="{ open: false }" class=" bg-transparent absolute top-0 mt-28 z-20 w-full transition-colors">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex justify-between">
 
         <!-- Primary Navigation Menu -->
