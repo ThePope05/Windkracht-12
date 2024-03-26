@@ -15,55 +15,53 @@
     </section>
     <!-- second part-->
     <section class="py-10 font-anton bg-gradient-to-tr from-aqua to-light">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="container mx-auto w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
                 <!-- First Black Div -->
-                <div class="p-8 rounded-lg text-white bg-dark-grey">
-                    <h2 class="text-2xl font-semibold mb-4 font-anton">Title 1</h2>
-                    <hr class="border-b-2 border-gray-600 mb-4">
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <button class="bg-light-aqua text-dark-grey py-2 px-4 rounded hover:bg-opacity-75 transition duration-300">Button</button>
-                </div>
+                <x-package-card route="dashboard">
+                    <x-slot name="title">Package 1</x-slot>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <x-slot name="button">
+                        View Details
+                    </x-slot>
+
+                </x-package-card>
                 <!-- Second Black Div -->
-                <div class="p-8 rounded-lg text-white bg-dark-grey">
-                    <h2 class="text-2xl font-semibold mb-4 font-anton">Title 1</h2>
-                    <hr class="border-b-2 border-gray-600 mb-4">
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <button class="bg-light-aqua text-dark-grey py-2 px-4 rounded hover:bg-opacity-75 transition duration-300">Button</button>
-                </div>
+                <x-package-card route="dashboard">
+                    <x-slot name="title">Package 2</x-slot>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <x-slot name="button">
+                        View Details
+                    </x-slot>
+                </x-package-card>
                 <!-- Third Black Div -->
-                <div class="p-8 rounded-lg text-white bg-dark-grey">
-                    <h2 class="text-2xl font-semibold mb-4 font-anton">Title 1</h2>
-                    <hr class="border-b-2 border-gray-600 mb-4">
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <button class="bg-light-aqua text-dark-grey py-2 px-4 rounded hover:bg-opacity-75 transition duration-300">Button</button>
-                </div>
+                <x-package-card route="dashboard">
+                    <x-slot name="title">Package 3</x-slot>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <x-slot name="button">
+                        View Details
+                    </x-slot>
+                </x-package-card>
                 <!-- Fourth Black Div -->
-                <div class="p-8 rounded-lg text-white bg-dark-grey">
-                    <h2 class="text-2xl font-semibold mb-4 font-anton">Title 1</h2>
-                    <hr class="border-b-2 border-gray-600 mb-4">
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                    </ul>
-                    <button class="bg-light-aqua text-dark-grey py-2 px-4 rounded hover:bg-opacity-75 transition duration-300">Button</button>
-                </div>
+                <x-package-card route="dashboard">
+                    <x-slot name="title">Package 4</x-slot>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <x-slot name="button">
+                        View Details
+                    </x-slot>
+                </x-package-card>
             </div>
         </div>
     </section>
+
 
     <script>
         const videoSources = [
