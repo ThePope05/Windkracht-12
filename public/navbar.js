@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 110) {
             navbar.classList.remove("absolute");
             navbar.classList.add("fixed");
-            navbar.classList.add("top-0");
             navbar.classList.remove("mt-28");
+            navbar.classList.add("top-0");
         } else {
             navbar.classList.remove("fixed");
             navbar.classList.add("absolute");

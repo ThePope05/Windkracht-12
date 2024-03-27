@@ -20,7 +20,6 @@
 
 <body class="font-sans antialiased">
     <div class="hidden bg-dark-aqua fixed"></div>
-    <div class="hidden bg-dark-aqua absolute"></div>
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         @include('layouts.navigation')
 
@@ -38,8 +37,10 @@
             {{ $slot }}
         </main>
 
-        @include('components.footer')
     </div>
+    @include('components.footer')
 </body>
+
+<script src="/navbar.js"></script>
 
 </html>

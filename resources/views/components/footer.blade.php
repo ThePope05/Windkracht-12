@@ -1,4 +1,4 @@
-<footer class="bottom-0 absolute w-full h-0">
+<footer class="w-full h-0">
     <div class="lg:flex md:flex sm:flex place-content-center lg:space-x-20 md:space-x-8 bg-dark-grey text-light xs:block">
         <div>
             <h3 class="font-bold lg:text-5xl md:text-4xl sm:text-2xl text-center">Contact Info</h3>
@@ -27,7 +27,7 @@
                 <a href=""><img class="w-25 h-20 ml-16 xs:ml-5" src="footer-images/instagram.png" alt=""></a>
             </ul>
         </div>
-        
+
     </div>
     <div class="flex w-100vh justify-between bg-grey text-light">
         <div class="flex gap-2 items-center">
@@ -36,4 +36,4 @@
         </div>
         <img class="w-20 h-15" src="footer-images/logo.png" alt="">
     </div>
-</footer>   
+</footer>

@@ -1,6 +1,6 @@
 <div class="p-8 text-white bg-dark-grey flex flex-col justify-center items-center w-3/5 mx-auto">
     <h2 class="text-2xl font-semibold mb-4 font-anton">{{ $title }}</h2>
-    <hr class="border-b-2 border-gray-600 w-full mb-4">
+    <hr class="border-b-2 border-white w-full mb-4">
     <ul class="list-disc pl-5 mb-4">
         {{ $slot }}
     </ul>
