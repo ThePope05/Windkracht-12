@@ -27,6 +27,11 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    public function invite(): View
+    {
+        return view('owner.invite');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -83,7 +88,7 @@ class RegisteredUserController extends Controller
 
         if ($invite) {
 
-            $role = ($invite->role != 'user') ? 'user' : $invite->role;
+            $role = ($invite->role != 'user') ? $invite->role : 'user';
 
             $user = User::create([
                 'name' => $invite->name,
